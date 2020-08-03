@@ -43,4 +43,3 @@ spec:
     secret:
      secretName: fortune-https
 
-
