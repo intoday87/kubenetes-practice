@@ -25,7 +25,7 @@ spec:
       readOnly: true
     - name: config
       mountPath: /etc/nginx/conf.d/my-nginx-config.conf
-      subPath: my-nginx-conf.config
+      subPath: my-nginx-config.conf
       readOnly: true
     - name: certs
       mountPath: /etc/nginx/certs/
