@@ -19,6 +19,12 @@ spec:
       mountPath: /var/htdocs
   - image: nginx:alpine
     name: web-server
+    env:
+    - name: FOO_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: fortune-https
+          key: foo
     volumeMounts:
     - name: html
       mountPath: /var/share/nginx/html
