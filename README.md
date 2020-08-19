@@ -1,4 +1,5 @@
 # Kubernetes
+책 전반적으로 kubernetes에 선언적으로 의도하는 상태를 선언하고 kubernetes가 그것을 달성할수 있는 가장 좋은 방법을 찾으냄으로써 스스로 그 상태를 달성하도록 하는데 초점을 둔다
 
 ## Service
 - 다이나믹하게 변하는 pod들에 대한 access를 추상화 하는 마치 pod과 같음
