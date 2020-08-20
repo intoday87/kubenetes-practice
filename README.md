@@ -33,3 +33,4 @@
   책의 내용과는 달리 내가 한건 `k edit deploy kubia`를 통해 image를 바꾸었는데 이렇게 표시가 된다. 책에서는 `k set image deploy kubia nodejs=luksa/kubia:v2`로 이미지 필드를 바꾸는데 그러면 change-cause에 이 명령줄에 해당 명령어로 나온다. 지금 정리하면서 보니 `--record`는 `k create -f kubia-deployment-v1.yaml --record`로 한 번만 수행을 하면 해당 리소스 관련해서 기록이 남는것 같다. 그 다음 명령어 부터는 옵션을 사용하지 않고 있다.
 - rollback은 `k rollout undo deploy kubia`로 한다. 그리고 진행 상황은 `k rollout status deploy kubia`로 본다. `--to-revision=1`로 
 - rs는 revision 만큼 생성이 된다. 언제든 해당 revision으로 돌아갈 수 있다. 각 rs는 deployment의 버전별 스냅샷이다. 무한정 늘어날 수 없으니 `editionHistoryLimit` 속성으로 제한 가능하다. 기본값은 2이다.
+  - extentions/v1beta1 버전은 historyLinit이 없지만 apps/v1beta2 버전의 기본값으 10
