@@ -34,3 +34,6 @@
 - rollback은 `k rollout undo deploy kubia`로 한다. 그리고 진행 상황은 `k rollout status deploy kubia`로 본다. `--to-revision=1`로 
 - rs는 revision 만큼 생성이 된다. 언제든 해당 revision으로 돌아갈 수 있다. 각 rs는 deployment의 버전별 스냅샷이다. 무한정 늘어날 수 없으니 `editionHistoryLimit` 속성으로 제한 가능하다. 기본값은 2이다.
   - `k explain deploy.spec` 으로 extentions/v1beta1 버전은 `revisionHistoryLimit`이 있고 int32 (i.e. 2147483647) 최대값이 디폴트이다.
+- `strategy.rollingUpdate`의 하위 속성으로 `maxSurge`, `maxUnavailable`이 있는데 배포중 몇 개의 팟이 허용 법위를 벗어나도 좋을지, 몇 퍼센트까지 replica에서 배포중 서비스 가능하지 않은 팟을 허용할지 설정할 수 있다.
+	- 각각 기본 값 25%
+	- 백분율 변환시 반올림
