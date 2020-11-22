@@ -47,7 +47,7 @@
 	- 에러 발생시 리소스를 업데이트 하면 다시 정상화 되는것을 확인했다(`k apply -f`)
 
 ## Statefulset
-- 기존의 stateless pod을 관리하는 replicaSet과는 달리 이전과 동일한 아이덴티티를 갖는다. 상태(볼륨), 동일한 ip(Headless service로), 이름(stateless pod이 매번 다른 해시가 뒤에 붙는것과 달리 서수 인덱스. `name-0`)등을 갖는다
+- 기존의 stateless pod을 관리하는 replicaSet과는 달리 이전과 동일한 아이덴티티를 갖는다. 상태(스토리지 볼륨), ~~동일한 ip(Headless service로)~~, 이름(stateless pod이 매번 다른 해시가 뒤에 붙는것과 달리 서수 인덱스. `name-0`), 호스트 이름 등을 갖는다
 - stateless pod을 가축이라고 하면 stateful pod은 애완동물이라고 할 수 있다. 언제든 대체되어도 구별이 어려운 가축의 특성과 달리 키우는 애완동물은 대체가 되지 않는다
 ### Headless service
 
