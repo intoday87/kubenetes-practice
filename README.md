@@ -49,6 +49,8 @@
 ## Statefulset
 - 기존의 stateless pod을 관리하는 replicaSet과는 달리 이전과 동일한 아이덴티티를 갖는다. 상태(스토리지 볼륨), ~~동일한 ip(Headless service로)~~, 이름(stateless pod이 매번 다른 해시가 뒤에 붙는것과 달리 서수 인덱스. `name-0`), 호스트 이름 등을 갖는다
 - stateless pod을 가축이라고 하면 stateful pod은 애완동물이라고 할 수 있다. 언제든 대체되어도 구별이 어려운 가축의 특성과 달리 키우는 애완동물은 대체가 되지 않는다
+- statefulset의 scaleout에서 볼륨은 개별 팟마다 별개의 pv로 가지고 있을수 있는데 복제를 위해서 데이터를 동기화해야 할수도 있다. 서비스 자체는 임의의 팟으로 서빙하기 때문에 개별 팟에서 SRV 레코드로 peer를 식별해서 모든 데이터 요청을 동기화 할 수 있다.
+  - SRV 레코드 얻는 방법: `k run -it srvlookup --image tutum/dnsutils --rm --restart Never -- dig SRV service-name.namespace.cluster.domain`
 ### Headless service
 
 ### Pod 마다 개별 볼륨
