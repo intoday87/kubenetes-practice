@@ -56,3 +56,7 @@
 
 ### Pod 마다 개별 볼륨
 
+
+### Tip
+- `custom-columns`를 이용한 출력 및 정렬
+  - `kgp -o custom-columns=POD:metadata.name,NODE:spec.nodeName --sort-by metadata.name`
