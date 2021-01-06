@@ -60,3 +60,4 @@
 ### Tip
 - `custom-columns`를 이용한 출력 및 정렬
   - `kgp -o custom-columns=POD:metadata.name,NODE:spec.nodeName --sort-by metadata.name`
+- [Use environment variables to define arguments](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#use-environment-variables-to-define-arguments)
