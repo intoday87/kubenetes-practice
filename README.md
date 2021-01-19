@@ -63,3 +63,4 @@
 - [Use environment variables to define arguments](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#use-environment-variables-to-define-arguments)
 - exec에서 명령어를 쓸 수 있다 
   - `$ kubectl exec "$(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings` 
+  - `$ kgp -o "custom-columns=LIMITS:.spec.containers[0].resources" -l app=ci-secondary`
